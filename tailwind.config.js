@@ -3,9 +3,10 @@ export default {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    
     extend: {
       fontFamily: {
-        sans: ['Arsenal', 'sans-serif'], 
+        sans: ['Arsenal', 'sans-serif'],
       },
     },
   },
