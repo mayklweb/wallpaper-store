@@ -13,3 +13,9 @@ html {
   /* background-color: #F9F7F5; */
   background-color: #f0ebe7a8;
 }
+
+.swiper-button-prev::after{
+  content: "";
+} .swiper-button-next::after{
+  content: "";
+}

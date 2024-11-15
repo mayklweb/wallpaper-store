@@ -1,15 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Autoplay, Navigation } from 'swiper/modules';
-import SwiperPrevBtn from './components/SwiperPrevBtn';
-import SwiperNextBtn from './components/SwiperNextBtn';
 
 
-function Products() {
+function Videos() {
+
+  const view = window.innerWidth
 
   const products = [{
     id: 1,
@@ -61,13 +59,6 @@ function Products() {
   },
   ]
 
-  const view = window.innerWidth
-
-
-  console.log(view);
-
-
-  
 
   return (
     // Products start
@@ -75,7 +66,7 @@ function Products() {
       <div className='container mx-auto px-3'>
         <div className='w-full mt-2 md:mt-4 lg:mt-6 xl:mt-8 '>
           <div className='flex items-center justify-between'>
-            <h3 className='text-2xl'>Projects</h3>
+            <h3 className='text-2xl'>Contents</h3>
             <button>See all</button>
           </div>
           <Swiper
@@ -113,4 +104,4 @@ function Products() {
   )
 }
 
-export default Products
+export default Videos
