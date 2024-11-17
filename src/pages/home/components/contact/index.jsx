@@ -46,11 +46,11 @@ function Contact() {
           <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
             <div className='w-[260px] flex flex-col gap-1'>
               <label className='text-lg' htmlFor="name">Ism</label>
-              <input className='w-full h-[36px] p-2 border-[1px] border-[solid] border-[#999] rounded-md focus:border-[#EAA439] outline-none' placeholder='Ism' value={name} onChange={(e) => setName(e.target.value)} type="text" id='name' />
+              <input className='w-full h-[36px] p-2 border-[1px] border-[solid] border-[#999] rounded-md focus:border-[#EAA439] outline-none' placeholder='Ism Familiy' value={name} onChange={(e) => setName(e.target.value)} type="text" id='name' />
             </div>
             <div className='flex flex-col gap-1'>
               <label className='text-lg' htmlFor="phone">Telefon</label>
-              <input className='w-full h-[36px] p-2 border-[1px] border-[solid] border-[#999] rounded-md focus:border-[#EAA439] outline-none' placeholder='Telefon' value={phone} onChange={(e) => setPhone(e.target.value)} type="text" id='phone' />
+              <input className='w-full h-[36px] p-2 border-[1px] border-[solid] border-[#999] rounded-md focus:border-[#EAA439] outline-none' placeholder='Telefon raqam' value={phone} onChange={(e) => setPhone(e.target.value)} type="text" id='phone' />
             </div>
             <button className='w-full h-10 text-lg text-[#fff] rounded-md bg-[#EAA439]'> Yuborish </button>
           </form>

@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 html {
+  width: 100%;
+  height: 100%;
   @apply scroll-smooth;
 }
 
@@ -19,3 +21,8 @@ html {
 } .swiper-button-next::after{
   content: "";
 }
+
+img{
+  object-position: 100% 56%;
+}
+

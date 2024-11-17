@@ -77,10 +77,9 @@ function Videos() {
             speed={1000}
             spaceBetween={10}
             slidesPerView={view < 768 ? 2 : view > 990 ? 4 : 3}
-            navigation={true}
             loop={true}
-            modules={[Navigation, Autoplay]}
-            className="p-2 bg-[#fff]">
+            modules={[Autoplay]}
+            className="mt-1 md:mt-3 p-2 bg-[#fff]">
             {
               products.map((item, i) => (
                 <SwiperSlide key={i} className={`w-full bg-[#fff] p-2 md:p-3`}>
@@ -100,7 +99,7 @@ function Videos() {
           </Swiper>
         </div>
       </div>
-    </section>
+    </section >
   )
 }
 
