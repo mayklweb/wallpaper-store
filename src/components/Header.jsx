@@ -9,7 +9,7 @@ function Header({ setModalOpen }) {
           <div className="flex items-center justify-between py-2">
             <Link to={'/'}>
               <div className='w-[96px] h-[40px] md:w-[140px] md:h-[52px] flex items-center justify-center'>
-                <img className='w-full h-full object-cover' src="/public/AQEM-final1.png" alt="" />
+                <img className='w-full h-full object-cover' src="./public/AQEM-final1.png" alt="" />
               </div>
             </Link>
             <div className="flex gap-4">
