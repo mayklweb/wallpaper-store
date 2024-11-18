@@ -18,7 +18,7 @@ function App() {
 
         <Route path='/' element={<Suspense fallback={''}><HomePage /> </Suspense>} />
         <Route path='/contents' element={<Suspense fallback={''}><ContentsPage /> </Suspense>} />
-        <Route path='/projects' element={<Suspense fallback={''}><ProductsPage /> </Suspense>} />
+        <Route path='/products' element={<Suspense fallback={''}><ProductsPage /> </Suspense>} />
 
       </Routes>
       <Footer/>

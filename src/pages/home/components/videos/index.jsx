@@ -74,7 +74,7 @@ function Videos() {
               delay: 1500,
               disableOnInteraction: false,
             }}
-            speed={1000}
+            speed={1200}
             spaceBetween={10}
             slidesPerView={view < 768 ? 2 : view > 990 ? 4 : 3}
             loop={true}

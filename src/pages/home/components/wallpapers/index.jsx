@@ -60,37 +60,94 @@ function Products() {
   },
   ]
 
-  const view = window.innerWidth
-
-
-  console.log(view);
-
-
-  
+  const [open, setOpen] = useState(false)
 
   return (
     // Products start
+    // <section>
+    //   <div className='container mx-auto px-3'>
+    //     <div className='w-full mt-2 md:mt-4 lg:mt-6 xl:mt-8 '>
+    //       <div className='flex items-center justify-between'>
+    //         <h3 className='text-xl md:text-2xl font-normal'>Projects</h3>
+    //         <Link className='text-sm md:text-base' to={'/projects'} >See all</Link>
+    //       </div>
+    //       <Swiper
+    //         autoplay={{
+    //           delay: 1500,
+    //           disableOnInteraction: false,
+    //         }}
+    //         speed={1000}
+    //         spaceBetween={10}
+    //         slidesPerView={view < 768 ? 2 : view > 990 ? 4 : 3}
+    //         loop={true}
+    //         modules={[Autoplay]}
+    //         className="mt-1 md:mt-3 p-2 bg-[#fff]">
+    //         {
+    //           products.map((item, i) => (
+    //             <SwiperSlide key={i} className={`w-full bg-[#fff] p-2 md:p-3`}>
+    //               <div className={`w-full `}>
+    //                 <img className='w-full h-full' src={item.image} alt="" />
+    //               </div>
+    //               <div className={`mt-1 pb-[10%] flex justify-between `}>
+    //                 <h3>{item.title}</h3>
+    //                 <p> {item.price.toLocaleString()} sum</p>
+    //               </div>
+    //             </SwiperSlide>
+    //           ))
+    //         }
+
+    //       </Swiper>
+    //       <div className='w-full h-10 mt-6 bg-black'>
+    //         <button>See All</button>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </section>
+
     <section>
       <div className='container mx-auto px-3'>
-        <div className='w-full mt-2 md:mt-4 lg:mt-6 xl:mt-8 '>
-          <div className='flex items-center justify-between'>
-            <h3 className='text-2xl font-medium'>Projects</h3>
-            <Link to={'/projects'} >See all</Link>
+        <div className='flex items-start'>
+       
+          <div className='hidden md:flex mt-5 flex-wrap gap-2  '>
+            <button className='text-sm md:text-base lg:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Все</button>
+            <button className='text-sm md:text-base lg:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>3D</button>
+            <button className='text-sm md:text-base lg:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Abstract</button>
+            <button className='text-sm md:text-base lg:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Dark</button>
+            <button className='text-sm md:text-base lg:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Мрамор</button>
+            <button className='text-sm md:text-base lg:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Фрукты</button>
+            <button className='text-sm md:text-base lg:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Неба</button>
+            <button className='text-sm md:text-base lg:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Ночной небо</button>
+            <button className='text-sm md:text-base lg:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Рамка</button>
+            <button className='text-sm md:text-base lg:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Украшение</button>
           </div>
-          <Swiper
-            autoplay={{
-              delay: 1500,
-              disableOnInteraction: false,
-            }}
-            speed={1000}
-            spaceBetween={10}
-            slidesPerView={view < 768 ? 2 : view > 990 ? 4 : 3}
-            loop={true}
-            modules={[Autoplay]}
-            className="mt-1 md:mt-3 p-2 bg-[#fff]">
+
+          <div className='mt-4 flex gap-2 items-center md:hidden'>
+            <form className='rounded-sm overflow-hidden flex flex-auto'>
+              <input placeholder='' className='flex flex-auto py-1 px-2 text-base' type="text" />
+              <button className='p-1 px-2 bg-[#EAA439]'>
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                </svg>
+              </button>
+            </form>
+            <button className='px-2 py-1.5 rounded bg-[#EAA439]'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="4" x2="20" y1="12" y2="12" />
+                <line x1="4" x2="20" y1="6" y2="6" />
+                <line x1="4" x2="20" y1="18" y2="18" />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div className='w-full mt-2 md:mt-4 xl:mt-6 '>
+          <div className='flex items-center justify-between'>
+            <h3 className='text-xl md:text-2xl font-normal'>Все: 210</h3>
+          </div>
+          <div className="mt-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
             {
               products.map((item, i) => (
-                <SwiperSlide key={i} className={`w-full bg-[#fff] p-2 md:p-3`}>
+                <div key={i} className={`w-full bg-[#fff] p-2 md:p-3`}>
                   <div className={`w-full `}>
                     <img className='w-full h-full' src={item.image} alt="" />
                   </div>
@@ -98,15 +155,30 @@ function Products() {
                     <h3>{item.title}</h3>
                     <p> {item.price.toLocaleString()} sum</p>
                   </div>
-                </SwiperSlide>
+                </div>
               ))
             }
 
-            {/* <SwiperPrevBtn/>
-            <SwiperNextBtn/> */}
-          </Swiper>
+          </div>
         </div>
       </div>
+      {/* <div className='fixed bottom-0 left-0 w-full h-full z-10 bg-[#00000080]'>
+        <div className='absolute bottom-0 left-0 w-full h-[60%] bg-white rounded-t-xl p-2 '>
+          <div className='mt-2 w-full h-full flex flex-wrap gap-2'>
+            <button className='w-auto h-auto text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Все</button>
+            <button className='w-auto h-auto text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>3D</button>
+            <button className='w-auto h-auto text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Abstract</button>
+            <button className='text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Dark</button>
+            <button className='text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Мрамор</button>
+            <button className='text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Фрукты</button>
+            <button className='text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Неба</button>
+            <button className='text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Ночной небо</button>
+            <button className='text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Рамка</button>
+            <button className='text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Украшение</button>
+          </div>
+
+        </div>
+      </div> */}
     </section>
   )
 }

@@ -27,7 +27,7 @@ function Hero() {
         className="h-auto object-cover"
       >
         <SwiperSlide className='object-cover'>
-          <img className='w-full object-cover' src="public/D009.jpg" alt="" />
+          <img className='w-full object-cover' src="/D009.jpg" alt="" />
         </SwiperSlide>
         {/* <SwiperSlide className='w-full object-contain'>
           <img className='w-full object-contain' src="public/G100.jpg" alt="" />
