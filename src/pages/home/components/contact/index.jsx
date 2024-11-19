@@ -29,6 +29,8 @@ function Contact() {
         return response.json();
       })
       .then(result => {
+        setName('')
+        setPhone('')
         console.log('Success:', result);
       })
       .catch(error => {
@@ -113,7 +115,7 @@ function Contact() {
                 </div>
                 <div className='flex flex-col gap-1'>
                   <label className='text-lg' htmlFor="phone">Telefon</label>
-                  <input className='w-full h-[36px] p-2 border-[1px] border-[solid] border-[#999] rounded-md focus:border-[#EAA439] outline-none' placeholder='Telefon raqam' value={phone} onChange={(e) => setPhone(e.target.value)} type="text" id='phone' />
+                  <input className='w-full h-[36px] p-2 border-[1px] border-[solid] border-[#999] rounded-md focus:border-[#EAA439] outline-none' placeholder='Telefon raqam' value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" id='phone' />
                 </div>
                 <button className='w-full h-10 text-lg text-[#fff] rounded-md bg-[#EAA439]'> Yuborish </button>
               </div>

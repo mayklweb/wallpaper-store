@@ -107,7 +107,7 @@ function Products() {
     <section>
       <div className='container mx-auto px-3'>
         <div className='flex items-start'>
-       
+
           <div className='hidden md:flex mt-5 flex-wrap gap-2  '>
             <button className='text-sm md:text-base lg:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Все</button>
             <button className='text-sm md:text-base lg:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>3D</button>
@@ -121,7 +121,7 @@ function Products() {
             <button className='text-sm md:text-base lg:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Украшение</button>
           </div>
 
-          <div className='mt-4 flex gap-2 items-center md:hidden'>
+          <div className='w-full mt-4 flex gap-2 items-center md:hidden'>
             <form className='rounded-sm overflow-hidden flex flex-auto'>
               <input placeholder='' className='flex flex-auto py-1 px-2 text-base' type="text" />
               <button className='p-1 px-2 bg-[#EAA439]'>
@@ -131,7 +131,7 @@ function Products() {
                 </svg>
               </button>
             </form>
-            <button className='px-2 py-1.5 rounded bg-[#EAA439]'>
+            <button onClick={() => setOpen(true)} className='px-2 py-1.5 rounded bg-[#EAA439]'>
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="4" x2="20" y1="12" y2="12" />
                 <line x1="4" x2="20" y1="6" y2="6" />
@@ -162,23 +162,30 @@ function Products() {
           </div>
         </div>
       </div>
-      {/* <div className='fixed bottom-0 left-0 w-full h-full z-10 bg-[#00000080]'>
-        <div className='absolute bottom-0 left-0 w-full h-[60%] bg-white rounded-t-xl p-2 '>
-          <div className='mt-2 w-full h-full flex flex-wrap gap-2'>
-            <button className='w-auto h-auto text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Все</button>
-            <button className='w-auto h-auto text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>3D</button>
-            <button className='w-auto h-auto text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Abstract</button>
-            <button className='text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Dark</button>
-            <button className='text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Мрамор</button>
-            <button className='text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Фрукты</button>
-            <button className='text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Неба</button>
-            <button className='text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Ночной небо</button>
-            <button className='text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Рамка</button>
-            <button className='text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Украшение</button>
+      <div className={`fixed bottom-0 left-0 w-full h-full z-10 bg-[#00000080] ${open ? 'opacity-100 visible' : 'opacity-0 invisible'} transition-all duration-200 ease-in-out`}>
+        <div className={`absolute bottom-0 left-0 w-full h-[60%] bg-white rounded-t-xl p-2 ${open ? 'translate-y-0' : 'translate-y-full'} transition-all duration-200 ease-in-out`}>
+          <div className='w-full flex justify-end'>
+            <button onClick={() => setOpen(false)} className='bg-gray-100 rounded-md'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M18 6 6 18" /><path d="m6 6 12 12" />
+              </svg>
+            </button>
+          </div>
+          <div className='mt-1 w-full h-full'>
+            <button className='m-1 text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Все</button>
+            <button className='m-1 text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>3D</button>
+            <button className='m-1 text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Abstract</button>
+            <button className='m-1 text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Dark</button>
+            <button className='m-1 text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Мрамор</button>
+            <button className='m-1 text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Фрукты</button>
+            <button className='m-1 text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Неба</button>
+            <button className='m-1 text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Ночной небо</button>
+            <button className='m-1 text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Рамка</button>
+            <button className='m-1 text-sm md:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'>Украшение</button>
           </div>
 
         </div>
-      </div> */}
+      </div>
     </section>
   )
 }
