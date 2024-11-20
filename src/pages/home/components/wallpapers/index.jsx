@@ -38,7 +38,7 @@ function Products() {
   }, []);
 
   const filtredProducts = filterId
-    ? products.filter((item) => item.category === filterId.name)
+    ? products.filter((item) => item.category === filterId.id)
     : products;
 
   return (
