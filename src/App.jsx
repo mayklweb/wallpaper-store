@@ -3,10 +3,10 @@ import { useState } from 'react'
 import { Footer, Header } from './components'
 import { Link, Route, Routes } from 'react-router-dom'
 import Modal from './components/Modal'
+import Contact from './pages/contents'
 
 const HomePage = lazy(() => import('./pages/home'))
 const ContentsPage = lazy(() => import('./pages/contents'))
-const ProductsPage = lazy(() => import('./pages/products'))
 
 function App() {
   const [modalOpen, setModalOpen] = useState(false)
@@ -17,7 +17,7 @@ function App() {
       <Routes>
 
         <Route path='/' element={<Suspense fallback={''}><HomePage /> </Suspense>} />
-        <Route path='/contact' element={<Suspense fallback={''}><ContentsPage /> </Suspense>} />
+        <Route path='/contact' element={<Suspense fallback={''}><Contact/> </Suspense>} />
 
       </Routes>
       <Footer/>

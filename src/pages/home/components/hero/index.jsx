@@ -6,37 +6,13 @@ import 'swiper/css';
 
 
 // import required modules
-import { Autoplay, EffectFade, Navigation, Pagination } from 'swiper/modules';
 
 function Hero() {
   return (
     <section>
-
-      <Swiper
-        centeredSlides={true}
-        effect={'fade'}
-        navigation={true}
-        pagination={{
-          clickable: true,
-        }}
-        autoplay={{
-          delay: 2500,
-          disableOnInteraction: false,
-        }}
-        modules={[Autoplay, EffectFade, Navigation, Pagination]}
-        className="h-auto object-cover"
-      >
-        <SwiperSlide className='object-cover'>
-          <img className='w-full object-cover' src="/D009.jpg" alt="" />
-        </SwiperSlide>
-        {/* <SwiperSlide className='w-full object-contain'>
-          <img className='w-full object-contain' src="public/G100.jpg" alt="" />
-        </SwiperSlide>
-        <SwiperSlide className='w-full object-contain'>
-          <img className='w-full object-contain' src="public/G027.jpg" alt="" />
-        </SwiperSlide> */}
-      </Swiper>
-
+      <div className="lg:container lg:mx-auto lg:px-4">
+        <img className='w-full h-full object-contain' src="/455x135.png" alt="" />
+      </div>
     </section>
   )
 }

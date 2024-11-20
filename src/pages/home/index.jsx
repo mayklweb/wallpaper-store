@@ -6,7 +6,6 @@ function HomePage() {
     <>
       <Hero />
       <Products />
-      {/* <Videos/> */}
       <Contact/>
     </>
   )
