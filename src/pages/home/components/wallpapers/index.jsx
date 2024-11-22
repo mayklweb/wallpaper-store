@@ -45,7 +45,7 @@ function Products() {
     <section>
       <div className='container mx-auto px-3'>
         <div className='flex items-start'>
-          <div className='flex items-start mt-5 pb-2 gap-2 overflow-x-scroll'>
+          <div className='overflow-x-scroll  lg:overflow-x-hidden flex items-start mt-5 pb-2 gap-2 '>
             <button
               onClick={() => setFilterId(null)}
               className='text-sm md:text-base lg:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'
