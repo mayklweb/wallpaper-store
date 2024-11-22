@@ -17,12 +17,15 @@ function App() {
       <Routes>
 
         <Route path='/' element={<Suspense fallback={''}><HomePage /> </Suspense>} />
-        <Route path='/contact' element={<Suspense fallback={''}><Contact/> </Suspense>} />
+        <Route path='/contact' element={<Suspense fallback={''}><Contact /> </Suspense>} />
 
       </Routes>
-      <Footer/>
+      <Footer />
       <Modal modalOpen={modalOpen} setModalOpen={setModalOpen} />
-      
+      {/* <Toaster
+        position="top-center"
+        reverseOrder={false}
+      /> */}
     </>
   )
 }

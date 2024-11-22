@@ -31,6 +31,7 @@ function Contact() {
       .then(result => {
         setName('')
         setPhone('')
+        // toast.success('Successfully toasted!')
         console.log('Success:', result);
       })
       .catch(error => {

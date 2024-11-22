@@ -8,7 +8,7 @@ function Products() {
 
   async function getData() {
     try {
-      const response = await fetch('https://marimovit1.pythonanywhere.com/products/');
+      const response = await fetch('http://admin.aqem.uz/api/products/');
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -21,7 +21,7 @@ function Products() {
 
   async function getCategory() {
     try {
-      const response = await fetch('https://marimovit1.pythonanywhere.com/categories/');
+      const response = await fetch('http://admin.aqem.uz/api/categories/');
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -79,7 +79,7 @@ function Products() {
                 </div>
                 <div className={`mt-1 pb-[10%] flex justify-between`}>
                   <h3>{item.title}</h3>
-                  <p className='text-xs md:text-base'>ID: {item.price.toLocaleString()}</p>
+                  <p className='text-xs md:text-base font-semibold'>ID: {item.price}</p>
                 </div>
               </div>
             ))}

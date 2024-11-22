@@ -18,11 +18,9 @@ function Modal({modalOpen, setModalOpen}) {
           <p className='text-2xl'>
             <Link  onClick={() => setModalOpen(false)} to={'/'}>Home</Link>
           </p>
+          
           <p className='text-2xl'>
-            <Link onClick={() => setModalOpen(false)} to={'products'}>Products</Link>
-          </p>
-          <p className='text-2xl'>
-            <Link onClick={() => setModalOpen(false)} to={'contents'}>Content</Link>
+            <Link onClick={() => setModalOpen(false)} to={'/contact'}>Contact</Link>
           </p>
         </div>
         <div className='flex p-4 gap-4 justify-end'>
