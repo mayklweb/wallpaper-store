@@ -6,7 +6,7 @@ function Contact() {
   const [phone, setPhone] = useState('')
 
 
-  const apiUrl = 'https://marimovit1.pythonanywhere.com/orders/';
+  const apiUrl = 'http://admin.aqem.uz/api/orders/';
 
   const data = {
     full_name: name,
