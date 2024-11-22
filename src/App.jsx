@@ -4,6 +4,7 @@ import { Footer, Header } from './components'
 import { Link, Route, Routes } from 'react-router-dom'
 import Modal from './components/Modal'
 import Contact from './pages/contents'
+import { ToastContainer } from 'react-toastify'
 
 const HomePage = lazy(() => import('./pages/home'))
 const ContentsPage = lazy(() => import('./pages/contents'))
@@ -22,10 +23,8 @@ function App() {
       </Routes>
       <Footer />
       <Modal modalOpen={modalOpen} setModalOpen={setModalOpen} />
-      {/* <Toaster
-        position="top-center"
-        reverseOrder={false}
-      /> */}
+      
+
     </>
   )
 }

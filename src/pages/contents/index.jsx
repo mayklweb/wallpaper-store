@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 function Contact() {
   const [name, setName] = useState('')
@@ -31,7 +32,7 @@ function Contact() {
       .then(result => {
         setName('')
         setPhone('')
-        // toast.success('Successfully toasted!')
+        toast.success('Successfully toasted!')
         console.log('Success:', result);
       })
       .catch(error => {
