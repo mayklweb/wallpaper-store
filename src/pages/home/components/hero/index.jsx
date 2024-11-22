@@ -1,17 +1,14 @@
 import React from 'react'
-// Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-// import 'swiper/css/effect-fade';
 import 'swiper/css';
-import { Autoplay} from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 
-// import required modules
 
 function Hero() {
   return (
     <section>
       <Swiper
-      speed={1000}
+        speed={1000}
         autoplay={{
           delay: 1500,
           disableOnInteraction: false,

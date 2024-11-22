@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Autoplay } from 'swiper/modules';
 
 function Contact() {
   const [name, setName] = useState('')
@@ -42,9 +45,24 @@ function Contact() {
   return (
     <>
       <section>
-        <div className="lg:container lg:mx-auto lg:px-4">
-          <img className='w-full h-full object-contain' src="/455x135.png" alt="" />
-        </div>
+          <Swiper
+            speed={1000}
+            autoplay={{
+              delay: 1500,
+              disableOnInteraction: false,
+            }}
+            modules={[Autoplay]}
+            className="lg:container lg:mx-auto lg:px-4">
+            <SwiperSlide>
+              <img className='w-full h-full object-contain' src="/455x135.png" alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='w-full h-full object-contain' src="/455x135.png" alt="" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='w-full h-full object-contain' src="/455x135.png" alt="" />
+            </SwiperSlide>
+          </Swiper>
       </section>
       <section>
         <div className="container mx-auto px-3">
