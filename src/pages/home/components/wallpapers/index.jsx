@@ -5,19 +5,36 @@ function Products() {
   const [open, setOpen] = useState(false);
   const [categories, setCategories] = useState([]);
   const [filterId, setFilterId] = useState(null);
+  const [visibleProducts, setVisibleProducts] = useState([]); // Ko'rinayotgan mahsulotlar
+  const [currentIndex, setCurrentIndex] = useState(0); // Hozirgi ko'rinayotgan mahsulotlar indeksi
+  const limit = 10; // Har safar necha mahsulot ko'rinadi
 
-  async function getData() {
+
+
+  const fetchProducts = async () => {
     try {
-      const response = await fetch('https://admin.aqem.uz/api/products/');
+      const response = await fetch("https://admin.aqem.uz/api/products/"); // Mahsulotlar API
       if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
+        throw new Error("Xatolik yuz berdi");
       }
       const data = await response.json();
-      setProducts(data);
+      setProducts(data); // Barcha mahsulotlarni saqlash
+      setVisibleProducts(data.slice(0, limit)); // Boshlang'ich mahsulotlarni ko'rsatish
     } catch (error) {
-      console.error('There was an error:', error);
+      console.error("Xatolik:", error);
     }
-  }
+  };
+
+
+  // Tugma bosilganda ko'rinadigan mahsulotlarni kengaytirish
+  const loadMore = () => {
+    const nextIndex = currentIndex + limit;
+    setVisibleProducts((prev) => [
+      ...prev,
+      ...products.slice(currentIndex, nextIndex),
+    ]);
+    setCurrentIndex(nextIndex);
+  };
 
   async function getCategory() {
     try {
@@ -33,13 +50,18 @@ function Products() {
   }
 
   useEffect(() => {
-    getData();
-    getCategory();
+    fetchProducts()
+    getCategory()
+  }, []);
+
+  useEffect(() => {
+    fetchProducts()
+    getCategory()
   }, []);
 
   const filtredProducts = filterId
-    ? products.filter((item) => item.category === filterId.id)
-    : products;
+    ? visibleProducts.filter((item) => item.category === filterId.id)
+    : visibleProducts;
 
   return (
     <section>
@@ -83,6 +105,13 @@ function Products() {
                 </div>
               </div>
             ))}
+          </div>
+          <div className='w-full flex items-center justify-center'>
+            {currentIndex < products.length && (
+              <button onClick={loadMore} className='mt-3 p-1 md:p-3 text-base md:text-lg text-white uppercase bg-[#EAA439] w-[80%] rounded-xl'>
+                Yana yuklash
+              </button>
+            )}
           </div>
         </div>
         <div className={`fixed bottom-0 left-0 w-full h-full z-10 bg-[#00000080] ${open ? 'opacity-100 visible' : 'opacity-0 invisible'} transition-all duration-200 ease-in-out`}>
