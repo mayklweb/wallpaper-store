@@ -8,7 +8,7 @@ function Products() {
 
   async function getData() {
     try {
-      const response = await fetch('http://admin.aqem.uz/api/products/');
+      const response = await fetch('https://admin.aqem.uz/api/products/');
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -21,7 +21,7 @@ function Products() {
 
   async function getCategory() {
     try {
-      const response = await fetch('http://admin.aqem.uz/api/categories/');
+      const response = await fetch('https://admin.aqem.uz/api/categories/');
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
