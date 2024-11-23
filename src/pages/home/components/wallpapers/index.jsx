@@ -7,7 +7,7 @@ function Products() {
   const [filterId, setFilterId] = useState(null);
   const [visibleProducts, setVisibleProducts] = useState([]); // Ko'rinayotgan mahsulotlar
   const [currentIndex, setCurrentIndex] = useState(0); // Hozirgi ko'rinayotgan mahsulotlar indeksi
-  const limit = 10; // Har safar necha mahsulot ko'rinadi
+  const limit = 8; // Har safar necha mahsulot ko'rinadi
 
 
 
