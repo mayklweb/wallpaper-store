@@ -72,7 +72,7 @@ function Products() {
               onClick={() => setFilterId(null)}
               className='text-sm md:text-base lg:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'
             >
-              All
+              Hammasi
             </button>
             {categories.map((item) => (
               <button
@@ -90,7 +90,7 @@ function Products() {
         <div className='w-full mt-2 md:mt-4 xl:mt-6'>
           <div className='flex items-center justify-between'>
             <h3 className='text-xl md:text-2xl font-normal'>
-              {filterId?.name || 'All Products'}: {filtredProducts.length}
+              {filterId?.name || 'Barcha maxsulotlar:'}: {filtredProducts.length}
             </h3>
           </div>
           <div className="mt-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
