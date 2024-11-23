@@ -7,7 +7,7 @@ function Contact() {
   const [phone, setPhone] = useState('')
 
 
-  const apiUrl = 'https://admin.aqem.uz/api/orders';
+  const apiUrl = 'https://admin.aqem.uz/api/orders/';
 
   const data = {
     full_name: name,
