@@ -21,7 +21,7 @@ function Products() {
       setProducts(data); // Barcha mahsulotlarni saqlash
       setVisibleProducts(data.slice(0, limit)); // Boshlang'ich mahsulotlarni ko'rsatish
     } catch (error) {
-      console.error("Xatolik:", error);
+      console.error(error);
     }
   };
 
@@ -90,7 +90,7 @@ function Products() {
         <div className='w-full mt-2 md:mt-4 xl:mt-6'>
           <div className='flex items-center justify-between'>
             <h3 className='text-xl md:text-2xl font-normal'>
-              {filterId?.name || 'Barcha maxsulotlar:'}: {filtredProducts.length}
+              {filterId?.name || 'Barcha maxsulotlar'}: {filtredProducts.length}
             </h3>
           </div>
           <div className="mt-2 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4">
@@ -100,8 +100,6 @@ function Products() {
                   <img className='w-full h-full' src={item.image} alt="" />
                 </div>
                 <div className={`mt-1 pb-[10%] flex justify-between`}>
-                  <h3>{item.title}</h3>
-                  <p className='text-xs md:text-base font-semibold'>ID: {item.price}</p>
                 </div>
               </div>
             ))}
