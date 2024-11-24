@@ -102,7 +102,7 @@ function Products() {
                   <img className='w-full h-full' src={item.image} alt="" />
                 </div>
                 <div className={`mt-1 pb-[6%] flex justify-between`}>
-                  {/* <p>{categories.filter(category => category.id !== item.category)}</p> */}
+                  <p></p>
                   <p className='text-base font-semibold'>ID: {item.name}</p>
                 </div>
               </div>
