@@ -25,6 +25,8 @@ function Products() {
     }
   };
 
+  console.log(products);
+
 
   // Tugma bosilganda ko'rinadigan mahsulotlarni kengaytirish
   const loadMore = () => {
@@ -99,7 +101,9 @@ function Products() {
                 <div className={`w-full`}>
                   <img className='w-full h-full' src={item.image} alt="" />
                 </div>
-                <div className={`mt-1 pb-[10%] flex justify-between`}>
+                <div className={`mt-1 pb-[6%] flex justify-between`}>
+                  {/* <p>{categories.filter(category => category.id !== item.category)}</p> */}
+                  <p className='text-base font-semibold'>ID: {item.name}</p>
                 </div>
               </div>
             ))}
