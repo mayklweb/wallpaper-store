@@ -1,71 +1,90 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 function Products() {
 
-  const products = [{
-    id: 1,
-    price: 78990,
-    title: "lorem nigga patalok",
-    image: "/K001.jpg"
-  },
-  {
-    id: 1,
-    price: 78990,
-    title: "lorem nigga patalok",
-    image: "/K002.jpg"
-  },
-  {
-    id: 1,
-    price: 78990,
-    title: "lorem nigga patalok",
-    image: "/K003.jpg"
-  },
-  {
-    id: 1,
-    price: 78990,
-    title: "lorem nigga patalok",
-    image: "/K004.jpg"
-  },
-  {
-    id: 1,
-    price: 78990,
-    title: "lorem nigga patalok",
-    image: "/K005.jpg"
-  },
-  {
-    id: 1,
-    price: 78990,
-    title: "lorem nigga patalok",
-    image: "/K006.jpg"
-  },
-  {
-    id: 1,
-    price: 78990,
-    title: "lorem nigga patalok",
-    image: "/K007.jpg"
-  },
-  {
-    id: 1,
-    price: 78990,
-    title: "lorem nigga patalok",
-    image: "/K008.jpg"
-  },
-  ]
+  const [products, setProducts] = useState([])
+  const [categories, setCategories] = useState([]);
+  const [filterId, setFilterId] = useState(null);
+
+
+
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch("https://admin.aqem.uz/api/products/"); // Mahsulotlar API
+      if (!response.ok) {
+        throw new Error("Xatolik yuz berdi");
+      }
+      const data = await response.json();
+      setProducts(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  async function getCategory() {
+    try {
+      const response = await fetch('https://admin.aqem.uz/api/categories/');
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const data = await response.json();
+      setCategories(data);
+    } catch (error) {
+      console.error('There was an error:', error);
+    }
+  }
+
+  useEffect(() => {
+    fetchProducts()
+    getCategory()
+  }, [])
+
+  const filtredProducts = filterId
+    ? products.filter((item) => item.category === filterId.id)
+    : products;
 
   return (
     <section>
       <div className='container mx-auto px-3'>
-        <div className='mt-5 grid gap-3 grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
-            {
-              products.map((item, i) => (
-                <div key={i} className={`w-full bg-[#fff] p-2 md:p-3`}>
+        <div className='flex items-start'>
+          <div className='overflow-x-scroll  lg:overflow-x-hidden flex items-start mt-5 pb-2 gap-2 '>
+            <button
+              onClick={() => setFilterId(null)}
+              className='text-sm md:text-base lg:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'
+            >
+              Hammasi
+            </button>
+            {categories.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => setFilterId(item)}
+                className='text-sm text-nowrap md:text-base lg:text-base text-white bg-[#EAA439] px-5 py-1 rounded-md border-[1px] border-solid border-[#EAA439]'
+              >
+                {item.name}
+              </button>
+            ))}
+          </div>
+
+        </div>
+
+        <div className='mt-2 flex items-center justify-between'>
+          <h3 className='text-xl md:text-2xl font-normal'>
+            {filterId?.name || 'Barcha maxsulotlar'} : {filtredProducts.length}
+          </h3>
+        </div>
+
+        <div className='mt-3 grid gap-3 grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+          {
+            filtredProducts.map((item, i) => (
+              <div key={i} className={`w-full bg-[#fff] p-1 md:p-3`}>
                 <div className={`w-full `}>
                   <img className='w-full h-full' src={item.image} alt="" />
                 </div>
-                
+
               </div>
-              ))
-            }
+            ))
+          }
         </div>
       </div>
     </section>

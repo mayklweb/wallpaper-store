@@ -5,6 +5,7 @@ import Modal from './components/Modal'
 import { ToastContainer } from 'react-toastify'
 import HomePage from './pages/home'
 import Contact from './pages/contents'
+import Products from './pages/products'
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
 
         <Route path='/' element={<HomePage />} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='/products' element={<Products/>} />
 
       </Routes>
       <Footer />
