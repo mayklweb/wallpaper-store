@@ -58,17 +58,17 @@ function Products() {
           modules={[Autoplay]}
           className="lg:container lg:mx-auto lg:px-4">
           <SwiperSlide>
-          <img className='w-full h-full object-contain' src="/banner-1.png" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className='w-full h-full object-contain' src="/banner-2.jpg" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className='w-full h-full object-contain' src="/banner-3.jpg" alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className='w-full h-full object-contain' src="/banner-4.jpg" alt="" />
-        </SwiperSlide>
+            <img className='w-full h-full object-contain' src="/banner-1.png" alt="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img className='w-full h-full object-contain' src="/banner-2.jpg" alt="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img className='w-full h-full object-contain' src="/banner-3.jpg" alt="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img className='w-full h-full object-contain' src="/banner-4.jpg" alt="" />
+          </SwiperSlide>
         </Swiper>
       </section>
 
@@ -108,7 +108,10 @@ function Products() {
                   <div className={`w-full `}>
                     <img className='w-full h-full' src={item.image} alt="" />
                   </div>
-
+                  <div className={`mt-1 pb-[6%] flex justify-between`}>
+                    <p></p>
+                    <p className='text-base font-semibold'>ID: {item.name}</p>
+                  </div>
                 </div>
               ))
             }

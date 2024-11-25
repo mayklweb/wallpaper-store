@@ -52,6 +52,9 @@ function Products() {
   return (
     <section>
       <div className='container mx-auto px-3'>
+        {
+          
+        }
         <div className='w-full mt-2 md:mt-4 xl:mt-6'>
           <div className='flex items-center justify-between'>
             <h3 className='text-xl md:text-2xl font-normal'>
