@@ -45,24 +45,27 @@ function Contact() {
   return (
     <>
       <section>
-          <Swiper
-            speed={1000}
-            autoplay={{
-              delay: 1500,
-              disableOnInteraction: false,
-            }}
-            modules={[Autoplay]}
-            className="lg:container lg:mx-auto lg:px-4">
-            <SwiperSlide>
-              <img className='w-full h-full object-contain' src="/455x135.png" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img className='w-full h-full object-contain' src="/455x135.png" alt="" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img className='w-full h-full object-contain' src="/455x135.png" alt="" />
-            </SwiperSlide>
-          </Swiper>
+        <Swiper
+          speed={1000}
+          autoplay={{
+            delay: 1500,
+            disableOnInteraction: false,
+          }}
+          modules={[Autoplay]}
+          className="lg:container lg:mx-auto lg:px-4">
+          <SwiperSlide>
+            <img className='w-full h-full object-contain' src="/banner-1.png" alt="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img className='w-full h-full object-contain' src="/banner-2.jpg" alt="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img className='w-full h-full object-contain' src="/banner-3.jpg" alt="" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img className='w-full h-full object-contain' src="/banner-4.jpg" alt="" />
+          </SwiperSlide>
+        </Swiper>
       </section>
       <section>
         <div className="container mx-auto px-3">
