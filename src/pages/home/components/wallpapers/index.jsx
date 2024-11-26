@@ -58,7 +58,7 @@ function Products() {
         <div className='w-full mt-2 md:mt-4 xl:mt-6'>
           <div className='flex items-center justify-between'>
             <h3 className='text-xl md:text-2xl font-normal'>
-              {filterId?.name || 'Maxsulatlar'} : {filtredProducts.length}
+              {filterId?.name || 'Maxsulatlar'}
             </h3>
 
             <Link to={'/products'} className='text-[#fff] px-4 py-1 rounded-md bg-[#EAA439] flex items-center justify-center'>Barchasin ko'rish</Link>
