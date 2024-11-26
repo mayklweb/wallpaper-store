@@ -76,13 +76,7 @@ function Products() {
               </div>
             ))}
           </div>
-          <div className='w-full flex items-center justify-center'>
-            {currentIndex < products.length && (
-              <Link to={'/products'} className='mt-4 p-2 md:p-3 text-base md:text-lg text-center text-white uppercase bg-[#EAA439] w-[80%] rounded-lg'>
-                Barchasin ko'rish
-              </Link>
-            )}
-          </div>
+
         </div>
       </div>
     </section>
