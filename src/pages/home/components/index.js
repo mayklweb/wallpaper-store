@@ -1,6 +1,8 @@
-import Contact from './contact'
-import Hero from './hero'
-import Videos from './videos'
-import Products from './wallpapers'
+import About from "./about";
+import Company from "./company";
+import Contact from "./contact";
+import Employees from "./content";
+import Hero from "./hero";
+import Products from "./wallpapers";
 
-export { Contact, Videos, Products, Hero }
+export { Company, Contact, Products, Hero, About, Employees };

@@ -6,7 +6,7 @@ function Footer() {
     <footer>
       <div className='bg-white mt-10 p-5'>
         <div className='container mx-auto px-3'>
-          <div className='flex flex-col md:flex-row gap-2 items-center justify-between'>
+          <div className='grid grid-cols-2 md:grid-cols-4 gap-2 items-center justify-between'>
             <div>
               <h3 className='text-xl font-medium'>MANZIL:</h3>
               <p>Bogot tumani </p>
@@ -21,6 +21,7 @@ function Footer() {
               <p> +998889370040 </p>
               <p> +998889370050 </p>
             </div>
+            <div></div>
             <div>
               <div className='flex p-4 gap-4 justify-end'>
                 <Link to={'https://www.instagram.com/aqem_group/'} className='bg-gray-100 p-2 rounded-lg'>
