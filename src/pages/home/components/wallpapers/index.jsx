@@ -4,8 +4,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import { useEffect, useState } from "react";
-import Lightbox from "react-image-lightbox";
-import "react-image-lightbox/style.css"; // Import the default styles
 
 function Products() {
   const [isOpen, setIsOpen] = useState(false);
