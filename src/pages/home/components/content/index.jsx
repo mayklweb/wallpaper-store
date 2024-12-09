@@ -22,7 +22,7 @@ function Content({ videos }) {
             className="mt-4"
           >
             {videos.map((video, i) => (
-              <SwiperSlide className="p-2 w-auto bg-white rounded">
+              <SwiperSlide key={i} className="p-2 w-auto bg-white rounded">
                 <video width="100%" controls loop muted>
                   <source
                     src={video.video}

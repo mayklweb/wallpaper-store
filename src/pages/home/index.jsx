@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { About, Company, Contact, Employees, Hero, Products } from "./components";
-import { Loading } from "../../components";
+import {
+  About,
+  Company,
+  Contact,
+  Employees,
+  Hero,
+  Products,
+} from "./components";
 
 function HomePage() {
   const [products, setProducts] = useState([]);
@@ -20,13 +26,12 @@ function HomePage() {
     }
   };
 
-  
   const fetchVideos = async () => {
     try {
       const response = await fetch("https://admin.aqem.uz/api/video/");
       if (!response.ok) {
         throw new Error("Xatolik yuz berdi");
-      } 
+      }
       const data = await response.json();
       setVideos(data);
       localStorage.setItem("videos", JSON.stringify(data));
@@ -37,15 +42,15 @@ function HomePage() {
 
   useEffect(() => {
     fetchProducts();
-    fetchVideos()
+    fetchVideos();
   }, []);
 
   return (
     <>
       <Hero />
       <About />
-      {products ? <Products products={products} /> : <Loading />}
-      <Company/>
+      <Products products={products} />
+      <Company />
       <Employees videos={videos} />
       <Contact />
     </>
