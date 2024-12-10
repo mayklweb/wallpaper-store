@@ -9,6 +9,8 @@ function Hero() {
     <section>
       <Swiper
         speed={1000}
+        spaceBetween={20}
+
         autoplay={{
           delay: 1500,
           disableOnInteraction: false,

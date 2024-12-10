@@ -47,6 +47,7 @@ function Contact() {
       <section>
         <Swiper
           speed={1000}
+          spaceBetween={20}
           autoplay={{
             delay: 1500,
             disableOnInteraction: false,
@@ -70,7 +71,7 @@ function Contact() {
       <section>
         <div className="container mx-auto px-3">
           <div className='md:h-[420px] mt-10 bg-white rounded-2xl flex flex-col-reverse md:flex-row items-center justify-center overflow-hidden'>
-            <div className='w-full h-full md:w-[40%] flex flex-col bg-[#EAA439]'>
+            <div className='w-full h-full md:w-[40%] flex flex-col bg-[#0B175B]'>
               <div className='p-6'>
                 <h2 className='text-white text-2xl'>Biz bilan bog'lanish</h2>
               </div>
@@ -139,13 +140,13 @@ function Contact() {
                 <div className='w-[280px] flex flex-col gap-4'>
                   <div className='w-full flex flex-col gap-1'>
                     <label className='text-lg' htmlFor="name">Ism</label>
-                    <input className='w-full h-[36px] p-2 border-[1px] border-[solid] border-[#999] rounded-md focus:border-[#EAA439] outline-none' placeholder='Ismingiz' value={name} onChange={(e) => setName(e.target.value)} type="text" id='name' required />
+                    <input className='w-full h-[36px] p-2 border-[1px] border-[solid] border-[#999] rounded-md focus:border-[#0B175B] outline-none' placeholder='Ismingiz' value={name} onChange={(e) => setName(e.target.value)} type="text" id='name' required />
                   </div>
                   <div className='flex flex-col gap-1'>
                     <label className='text-lg' htmlFor="phone">Telefon</label>
-                    <input className='w-full h-[36px] p-2 border-[1px] border-[solid] border-[#999] rounded-md focus:border-[#EAA439] outline-none' placeholder='Telefon raqamingiz' value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" id='phone' required />
+                    <input className='w-full h-[36px] p-2 border-[1px] border-[solid] border-[#999] rounded-md focus:border-[#0B175B] outline-none' placeholder='Telefon raqamingiz' value={phone} onChange={(e) => setPhone(e.target.value)} type="tel" id='phone' required />
                   </div>
-                  <button className='w-full h-10 text-lg text-[#fff] rounded-md bg-[#EAA439]'> Yuborish </button>
+                  <button className='w-full h-10 text-lg text-[#fff] rounded-md bg-[#0B175B]'> Yuborish </button>
                 </div>
               </form>
             </div>

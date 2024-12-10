@@ -5,6 +5,7 @@ import {
   Contact,
   Employees,
   Hero,
+  Mission,
   Products,
 } from "./components";
 
@@ -50,6 +51,7 @@ function HomePage() {
       <Hero />
       <About />
       <Products products={products} />
+      <Mission/>
       <Company />
       <Employees videos={videos} />
       <Contact />

@@ -1,9 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 function Content({ videos }) {
   const width = window.innerWidth;
+
+  const videoRefs = useRef([]);
+
+  
+  const playVideo = (index) => {
+    console.log(videoRefs.current[index]);
+    if (videoRefs.current[index]) {
+      videoRefs.current[index].play();
+    }
+  };
+
+  const pauseVideo = (index) => {
+    if (videoRefs.current[index]) {
+      videoRefs.current[index].pause();
+    }
+  };
+  
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -23,7 +40,7 @@ function Content({ videos }) {
           >
             {videos.map((video, i) => (
               <SwiperSlide key={i} className="p-2 w-auto bg-white rounded">
-                <video width="100%" controls loop muted>
+                <video  ref={(el) => (videoRefs.current[i] = el)} width="100%" muted onClick={() => playVideo(i)}>
                   <source
                     src={video.video}
                     type="video/mp4"
@@ -31,17 +48,9 @@ function Content({ videos }) {
                 </video>
               </SwiperSlide>
             ))}
-            <SwiperSlide className="p-2 w-auto bg-white rounded">
-              <video width="100%" controls autoPlay loop muted>
-                <source src="/video_2024-12-03_14-44-50.mp4" type="video/mp4" />
-              </video>
-            </SwiperSlide>
-            <SwiperSlide className="p-2 w-auto bg-white rounded">
-              <video width="100%" controls autoPlay loop muted>
-                <source src="/video_2024-12-03_14-45-05.mp4" type="video/mp4" />
-              </video>
-            </SwiperSlide>
           </Swiper>
+          <button onClick={() => playVideo(index)}> play video </button>
+          <button onClick={() => pauseVideo(index)}> play video </button>
         </div>
       </div>
     </section>

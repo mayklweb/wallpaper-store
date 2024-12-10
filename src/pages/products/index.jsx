@@ -7,9 +7,10 @@ function Products() {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [filterId, setFilterId] = useState(null);
-
   const [isOpen, setIsOpen] = useState(false);
   const [image, setImage] = useState("");
+  const [product, setProduct] = useState([]);
+  const [count, setCount] = useState(8);
 
   const openViewImg = (img) => {
     setIsOpen(true);
@@ -47,20 +48,21 @@ function Products() {
     }
   }
 
+  const filtredProducts = filterId
+    ? products.filter((item) => item.category === filterId.id).slice(0, count)
+    : products.slice(0, count);
+
   useEffect(() => {
     fetchProducts();
     getCategory();
   }, []);
-
-  const filtredProducts = filterId
-    ? products.filter((item) => item.category === filterId.id)
-    : products;
 
   return (
     <>
       <section>
         <Swiper
           speed={1000}
+          spaceBetween={20}
           autoplay={{
             delay: 1500,
             disableOnInteraction: false,
@@ -105,7 +107,11 @@ function Products() {
             <div className="overflow-x-scroll  lg:overflow-x-hidden flex items-start mt-5 pb-2 gap-2 ">
               <button
                 onClick={() => setFilterId(null)}
-                className="text-sm md:text-base lg:text-base text-white bg-[#0B175B] px-5 py-1 rounded-md border-[1px] border-solid border-[#0B175B]"
+                className={`text-sm md:text-base lg:text-base ${
+                  filterId === null
+                    ? "text-white bg-[#0B175B]"
+                    : "text-[#0B175B] bg-[#fff]"
+                }  px-5 py-1 rounded-md border-[1px] border-solid border-[#0B175B]`}
               >
                 Hammasi
               </button>
@@ -113,7 +119,11 @@ function Products() {
                 <button
                   key={item.id}
                   onClick={() => setFilterId(item)}
-                  className="text-sm text-nowrap md:text-base lg:text-base text-white bg-[#0B175B] px-5 py-1 rounded-md border-[1px] border-solid border-[#0B175B]"
+                  className={`text-sm text-nowrap md:text-base lg:text-base  px-5 py-1 rounded-md border-[1px] border-solid border-[#0B175B] ${
+                    filterId?.id === item.id
+                      ? "text-white bg-[#0B175B]"
+                      : "text-[#0B175B] bg-[#fff]"
+                  }`}
                 >
                   {item.name}
                 </button>
@@ -147,7 +157,6 @@ function Products() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  class="lucide lucide-x"
                 >
                   <path d="M18 6 6 18" />
                   <path d="m6 6 12 12" />
@@ -173,6 +182,14 @@ function Products() {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="w-full mt-4 flex items-center justify-center">
+            <button
+              onClick={() => setCount((count) => count + 8)}
+              className="w-[50%] h-10 rounded text-white bg-[#0B175B]"
+            >
+              Yana ko'rish
+            </button>
           </div>
         </div>
       </section>
