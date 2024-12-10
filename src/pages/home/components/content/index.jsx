@@ -49,8 +49,6 @@ function Content({ videos }) {
               </SwiperSlide>
             ))}
           </Swiper>
-          <button onClick={() => playVideo(index)}> play video </button>
-          <button onClick={() => pauseVideo(index)}> play video </button>
         </div>
       </div>
     </section>
