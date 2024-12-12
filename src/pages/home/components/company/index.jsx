@@ -18,7 +18,7 @@ function Company() {
               ishlab chiqarish bo‘yicha yetakchi o‘rinlardan birini egallab
               kelmoqda. Bizning asosiy maqsadimiz – yuqori sifatli tortma
               shiftlarni ishlab chiqarish va mijozlarimizga zamonaviy dizaynlar
-              hamda materiallarni taqdim etishdir. Kompaniya dastlab kichik sex
+              hamda materiallarni taqdim etishdir. Kompaniya dastlab kichik seh
               sifatida o‘z faoliyatini boshlagan, biroq qisqa vaqt ichida yuqori
               sifat va innovatsiyalar tufayli taniqli brendga aylangan. Bizning
               seximizda zamonaviy texnologiyalar va yuqori sifatli xomashyo
