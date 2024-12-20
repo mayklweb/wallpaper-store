@@ -7,12 +7,12 @@ function Company() {
         <h2 className="mb-4 text-3xl md:text-4xl font-medium text-center">
           Kampaniya haqida
         </h2>
-        <div className="w-full mt-4 flex flex-col lg:flex-row">
+        <div className="w-full mt-4 flex flex-col items-center lg:flex-row">
           <div className="w-[40%] flex items-center justify-center">
             <img className="w-[80%]" src="/AQEM-final-2.png" alt="" />
           </div>
-          <div className="w-[60%] p-2 md:p-4 text-center md:text-start">
-            <h3 className="text-lg font-medium text-black text-center">
+          <div className="w-full lg:w-[60%] p-2 md:p-4 text-center md:text-start">
+            <h3 className="text-base md:text-lg font-medium text-black text-center">
                AQEM GROUP kompaniyasi 2023-yil 11-noyabrda
               tashkil etilgan bo‘lib, o‘zining tortma shift (natyajnoy patalok)
               ishlab chiqarish bo‘yicha yetakchi o‘rinlardan birini egallab
@@ -21,7 +21,7 @@ function Company() {
               hamda materiallarni taqdim etishdir. Kompaniya dastlab kichik seh
               sifatida o‘z faoliyatini boshlagan, biroq qisqa vaqt ichida yuqori
               sifat va innovatsiyalar tufayli taniqli brendga aylangan. Bizning
-              seximizda zamonaviy texnologiyalar va yuqori sifatli xomashyo
+              sehimizda zamonaviy texnologiyalar va yuqori sifatli xomashyo
               ishlatiladi. Har bir ishlab chiqarish jarayoni qat’iy sifat
               nazorati ostida amalga oshiriladi. Mahsulotlarning har bir
               partiyasi yakuniy sifat tekshiruvidan o‘tkaziladi, bu esa
